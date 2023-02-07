@@ -1,0 +1,13 @@
+---  
+- name: Create Prefix and VLAN Roles within NetBox
+  netbox.netbox.netbox_ipam_role:
+#    netbox_url: "{{ lookup('ansible.builtin.env', 'NETBOX_API') }}"
+#    netbox_token: "{{ lookup('ansible.builtin.env', 'NETBOX_TOKEN') }}"
+     netbox_url: http://192.168.1.153:8000
+     netbox_token: 0123456789abcdef0123456789abcdef01234567
+     data: "{{ role }}"        
+     state: present
+  loop: "{{ ipam_roles }}"
+  loop_control: 
+    loop_var: role
+    label: "{{ role['name']}}"
