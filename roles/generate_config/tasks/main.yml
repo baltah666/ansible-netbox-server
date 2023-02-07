@@ -56,9 +56,9 @@
 #        ansible.builtin.debug:
 #        var: interfaces.json.results
 
-- name: Display Json Data
-  ansible.builtin.debug:
-    var: interfaces.json.results
+#- name: Display Json Data
+#  ansible.builtin.debug:
+#    var: interfaces.json.results
 
 
 #Uncomment to display the Ansible Host Vars for a host
