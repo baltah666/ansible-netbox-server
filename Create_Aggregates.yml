@@ -1,0 +1,8 @@
+- name: PLAY 2 - Create Aggregates
+  connection: local
+  hosts: localhost
+  gather_facts: False
+
+  roles:
+    - role: create_aggregates
+      tags: aggregates

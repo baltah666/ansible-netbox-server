@@ -1,0 +1,8 @@
+- name: PLAY 3 - Create Prefix and VLAN Roles
+  connection: local
+  hosts: localhost
+  gather_facts: False
+
+  roles:
+    - role: create_prefix_and_vlan_roles
+      tags: prefix_and_roles

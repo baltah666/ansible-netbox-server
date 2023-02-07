@@ -1,0 +1,9 @@
+---
+- name: PLAY 1 - Create RIRs
+  connection: local
+  hosts: localhost
+  gather_facts: False
+
+  roles:
+    - role: create_rirs
+      tags: rirs

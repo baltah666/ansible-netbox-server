@@ -1,0 +1,7 @@
+- name: PLAY 5 - Create VLAN Groups
+  connection: local
+  hosts: localhost
+  gather_facts: False
+  roles:
+    - role: create_vlan_groups
+      tags: vlan_groups
