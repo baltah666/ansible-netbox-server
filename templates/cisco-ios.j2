@@ -8,7 +8,6 @@ service password-encryption
 service linenumber
 service compress-config
 service sequence-numbers
-no platform punt-keepalive disable-kernel-core
 !
 hostname {{ device.json.results[0]['name'] }}
 !
@@ -30,18 +29,13 @@ no logging message-counter syslog
 logging userinfo
 logging buffered notifications
 !
-aaa new-model
+#aaa new-model
 !
 !
 no ip bootp server
 {% for name_server in device.json.results[0].config_context['name-servers'] %}
 ip name-server {{ name_server }}
 {% endfor %}
-!
-spanning-tree extend system-id
-!
-redundancy
- mode none
 !
 !
 lldp run
@@ -63,7 +57,7 @@ interface {{ intf.name }}
 snmp-server community {{ device.json.results[0].config_context['snmp-ro-community'] }} RO 
 snmp-server location {{ site.json.results[0]['region']['name'] }} [{{ site.json.results[0]['latitude'] }},{{ site.json.results[0]['longitude'] }}] 
 !
-logging source-interface GigabitEthernet0
+logging source-interface GigabitEthernet0/0
 {% for syslog_server in device.json.results[0].config_context['syslog-servers'] %}
 logging host {{ syslog_server }} transport udp port 1514
 {% endfor %}

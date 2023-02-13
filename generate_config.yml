@@ -1,8 +1,9 @@
 ---
 - name: Generate Device Configuration
   connection: local
-  hosts: device_roles_access_switch, device_roles_wan_router
-#  hosts: device_roles_wan_router
+#  hosts: device_roles_access_switch, device_roles_wan_router
+  hosts: device_roles_wan_router
+#  hosts: AUBRI01-RTR-1 
   gather_facts: False
 
   roles:

@@ -81,3 +81,24 @@
       src: "templates/{{ platforms[0] }}-set.j2"
       dest: "{{ configs_directory }}/{{ inventory_hostname }}/{{ inventory_hostname }}.set"
   when: platforms[0] == 'juniper-junos'
+
+
+- name: Configure Router
+  ios_config:
+     src: "{{ configs_directory }}/{{ inventory_hostname }}/{{ inventory_hostname }}.conf"
+
+
+
+- name: save running-config to startup
+  ios_config:
+   save_when: modified
+#  provider:
+#   host: "{{ inventory_hostname }}"
+#   username: "admin"
+#   password: "cisco"
+
+#    commands:
+#    - show version
+#    - show interfaces
+#      commands_file: "{{ configs_directory }}/{{ inventory_hostname }}/{{ inventory_hostname }}.conf"
+#      commands: "{{ configs_directory }}/{{ inventory_hostname }}/{{ inventory_hostname }}.conf"

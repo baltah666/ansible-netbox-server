@@ -1,0 +1,39 @@
+---
+- name: Get ARP information
+  hosts: serointsr33001
+  gather_facts: false
+
+  vars:
+    netbox_url: "https://192.168.122.29:8000/api"
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+    ansible_connection: ansible.netcommon.network_cli
+    ansible_network_os: cisco.ios.ios
+    ansible_become: yes
+    ansible_become_method: enable
+
+  tasks:
+    - name: show arp
+      ios_command:
+        commands:
+          - show version
+          - show ip interface brief
+          - show inventory
+          - show ntp association
+      register: show_result
+    - debug: var=show_result.stdout_lines
+
+    - name: run "show running | include logging host" after change made
+      ios_command:
+        commands:
+          - show running | include logging host
+      register: syslogsrv_list
+
+    - debug: var=syslogsrv_list.stdout_lines
+
+    - name: write running-config to startup-config
+      ios_command:
+        commands:
+          - write
+      register: write_output
+
+    - debug: var=write_output.stdout_lines

@@ -1,0 +1,35 @@
+---
+- name: Configure Cisco IOS Router
+  hosts: cisco_ios_router
+  gather_facts: no
+  vars:
+    netbox_url: "https://192.168.122.29:8000/api"
+    netbox_token: "0123456789abcdef0123456789abcdef01234567"
+
+  tasks:
+  - name: Retrieve Interface Data from Netbox
+    uri:
+      url: "{{ netbox_url }}/dcim/interfaces/?device={{ inventory_hostname }}"
+      method: GET
+      headers:
+        Authorization: Token {{ netbox_token }}
+      return_content: yes
+    register: result
+
+  - name: Generate Configuration
+    template:
+#      src: templates/ios_config.j2
+#      dest: configs/ios_config.txt
+      src: "templates/{{ platforms[0] }}.j2"
+      dest: "{{ configs_directory }}/{{ inventory_hostname }}/{{ inventory_hostname }}.conf"
+    vars:
+      interfaces: "{{ result.json.results }}"
+
+  - name: Configure Router
+    ios_command:
+    provider:
+      host: "{{ inventory_hostname }}"
+      username: "ansible"
+      password: "secret"        
+#   commands_file: configs/ios_config.txt
+    commands_file: "{{ configs_directory }}/{{ inventory_hostname }}/{{ inventory_hostname }}.conf"
