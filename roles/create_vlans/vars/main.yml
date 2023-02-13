@@ -48,3 +48,11 @@ vlans:
     vid: 60
     vlan_group: Brisbane_VLANS
     vlan_role: Point_to_Point
+
+  - name: DU
+    site: AUBRI01
+    status: reserved
+    tenant: Consulting
+    vid: 100
+    vlan_group: Brisbane_VLANS
+    vlan_role: DU_sitelan

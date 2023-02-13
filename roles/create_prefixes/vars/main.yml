@@ -48,3 +48,19 @@ prefixes:
     site: AUBRI01
     tenant: Consulting
     vlan: P2P
+
+  - parent: 192.168.0.0/22
+    status: reserved
+    description: P2P RTR-SW
+    prefix_length: 30
+    site: AUBRI01
+    tenant: Consulting
+    vlan: P2P
+
+  - parent: 192.168.0.0/22
+    status: reserved
+    description: DU
+    prefix_length: 26
+    site: AUBRI01
+    tenant: Consulting
+    vlan: DU
