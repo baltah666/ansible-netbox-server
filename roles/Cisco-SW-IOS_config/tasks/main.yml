@@ -1,0 +1,10 @@
+---
+- name: Configure Switch
+  ios_config:
+     src: "{{ configs_directory }}/{{ inventory_hostname }}/{{ inventory_hostname }}.conf"
+
+
+
+- name: save running-config to startup
+  ios_config:
+   save_when: modified

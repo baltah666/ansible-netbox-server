@@ -1,13 +1,13 @@
 ---
-- name: Generate Device Configuration
+- name: Cisco IOS config
   connection: local
 #  hosts: device_roles_access_switch, device_roles_wan_router
 #  hosts: device_roles_access_switch, manufacturer_Cisco
   hosts: device_roles_wan_router
 #  hosts: serointdsw33002,serointdsw33001,serointsr33001,serointsr33002 
-#  hosts: AUBRI01-SW-1 
+#  hosts: serointsr33001 
   gather_facts: False
 
   roles:
-    - role: generate_config
-      tags: generate_config 
+    - role: Cisco-IOS_config
+      tags: Cisco-IOS_config

@@ -1,0 +1,13 @@
+---
+- name: Cisco IOS config
+  connection: local
+  hosts: device_roles_cisco_access_switch
+#  hosts: device_roles_access_switch, manufacturer_Cisco
+#  hosts: device_roles_wan_router
+#  hosts: serointdsw33002,serointdsw33001,serointsr33001,serointsr33002 
+#  hosts: serointsr33001 
+  gather_facts: False
+
+  roles:
+    - role: Cisco-SW-IOS_config
+      tags: Cisco-SW-IOS_config
