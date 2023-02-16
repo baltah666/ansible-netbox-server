@@ -1,11 +1,13 @@
 ---
 - name: Generate Device Configuration
   connection: local
-  hosts: device_roles_access_switch, device_roles_wan_router
+  hosts: device_roles_access_switch, device_roles_wan_router, device_roles_cisco_access_switch
 #  hosts: device_roles_access_switch, manufacturer_Cisco
 #  hosts: device_roles_wan_router
 #  hosts: serointdsw33002,serointdsw33001,serointsr33001,serointsr33002 
 #  hosts: AUBRI01-SW-1 
+#  hosts: device_roles_cisco_access_switch 
+
   gather_facts: False
 
   roles:
