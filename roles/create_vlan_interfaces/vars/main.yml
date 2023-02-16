@@ -4,24 +4,74 @@ interfaces:
   - device: AUBRI01-SW-1
     enabled: yes
     type: virtual
-    name: vlan.10
+    name: vlan 10
 
   - device: AUBRI01-SW-1
     enabled: yes
     type: virtual
-    name: vlan.20
+    name: vlan 20
 
   - device: AUBRI01-SW-1
     enabled: yes
     type: virtual
-    name: vlan.30
+    name: vlan 30
 
   - device: AUBRI01-SW-1
     enabled: yes
     type: virtual
-    name: vlan.40
+    name: vlan 40
 
   - device: AUBRI01-SW-1
     enabled: yes
     type: virtual
-    name: vlan.50
+    name: vlan 50
+
+  - device: al-sw1-TS33
+    enabled: yes
+    type: virtual
+    name: vlan 10
+
+  - device: al-sw1-TS33
+    enabled: yes
+    type: virtual
+    name: vlan 20
+
+  - device: al-sw1-TS33
+    enabled: yes
+    type: virtual
+    name: vlan 30
+
+  - device: al-sw1-TS33
+    enabled: yes
+    type: virtual
+    name: vlan 40
+
+  - device: al-sw1-TS33
+    enabled: yes
+    type: virtual
+    name: vlan 50
+
+  - device: al-sw1-TS23
+    enabled: yes
+    type: virtual
+    name: vlan 10
+
+  - device: al-sw1-TS23
+    enabled: yes
+    type: virtual
+    name: vlan 20
+
+  - device: al-sw1-TS23
+    enabled: yes
+    type: virtual
+    name: vlan 30
+
+  - device: al-sw1-TS23
+    enabled: yes
+    type: virtual
+    name: vlan 40
+
+  - device: al-sw1-TS23
+    enabled: yes
+    type: virtual
+    name: vlan 50
