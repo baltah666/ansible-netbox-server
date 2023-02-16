@@ -84,3 +84,73 @@ ip_addresses:
     prefix: 192.168.2.0/26
     status: Reserved
     tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS23
+      name: vlan.10
+    prefix: 192.168.0.0/25
+    status: Reserved
+    tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS23
+      name: vlan.20
+    prefix: 192.168.0.128/25
+    status: Reserved
+    tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS23
+      name: vlan.30
+    prefix: 192.168.1.0/25
+    status: Reserved
+    tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS23
+      name: vlan.40
+    prefix: 192.168.1.128/25
+    status: Reserved
+    tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS23
+      name: vlan.50
+    prefix: 192.168.2.0/26
+    status: Reserved
+    tenant: Consulting
+	
+ - assigned_object:
+      device: al-sw1-TS33
+      name: vlan.10
+    prefix: 192.168.0.0/25
+    status: Reserved
+    tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS33
+      name: vlan.20
+    prefix: 192.168.0.128/25
+    status: Reserved
+    tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS33
+      name: vlan.30
+    prefix: 192.168.1.0/25
+    status: Reserved
+    tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS33
+      name: vlan.40
+    prefix: 192.168.1.128/25
+    status: Reserved
+    tenant: Consulting
+
+  - assigned_object:
+      device: al-sw1-TS33
+      name: vlan.50
+    prefix: 192.168.2.0/26
+    status: Reserved
+    tenant: Consulting
